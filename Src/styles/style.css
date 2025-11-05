@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Parisienne", cursive;
+    background-image: url('../assets/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* remover espaçamento superior conforme solicitado; manter laterais */
+    padding: 0 20px 20px 20px;
+    position: relative;
+}
+
+/* Brush no canto inferior esquerdo */
+.container::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -20px;
+    width: 400px;
+    height: 400px;
+    background-image: url('../assets/brush.png');
+    background-size: contain;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    /* remover padding-top para deixar o conteúdo colado ao topo */
+    padding: 0 20px 20px 20px;
+    position: relative;
+    overflow: visible;
+}
+
+/* Waves decorativas posicionadas dentro do container */
+.wave {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    opacity: 1;
+}
+
+.wave1 {
+    top: -10px;
+    left: -20px;
+    /* aumentado para ficar mais visível próximo à logo */
+    width: 300px;
+    height: auto;
+}
+
+.wave2 {
+    bottom: -40px;
+    right: -30px;
+    /* aumentado para ficar mais presente perto dos botões */
+    width: 340px;
+    height: auto;
+}
+
+/* Perfil */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px; /* controla a distância interna entre imagem, nome e bio */
+    margin-bottom: 15px; /* distância até os links */
+}
+
+.profile-img {
+    /* reduzir 20% em relação ao tamanho base anterior (500px -> 400px) */
+    width: 400px;
+    height: auto;
+    margin: 0 0 6px 0; /* sem espaçamento superior */
+    /* removido transform para que o tamanho seja real e previsível no fluxo */
+    display: block;
+    z-index: 1;
+}
+
+.profile h1 {
+    font-family: "Parisienne", cursive;
+    font-size: 36px;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.bio {
+    font-family: Arial, sans-serif;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Links */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.link-item {
+    font-family: "Petit Formal Script", cursive;
+    /* fundo com 75% de opacidade conforme solicitado */
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #111;
+    font-weight: normal;
+    font-size: 22px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    text-shadow: 0.2px 0.2px 0.2px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto; /* desktop/tablet default */
+}
+
+.link-item:hover {
+    transform: translateY(-2px);
+}
+
+/* Redes Sociais */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px 10px 10px;
+    }
+
+    .profile-img {
+        /* versão responsiva: 80% do desktop (400px -> 320px) */
+        width: 320px;
+    }
+
+    /* waves menores em mobile para não interferir no conteúdo */
+    .wave1 {
+        width: 120px;
+        top: 0;
+        left: 0;
+    }
+
+    .wave2 {
+        width: 120px;
+        bottom: -10px;
+        right: -6px;
+    }
+
+    .link-item {
+        padding: 12px 15px;
+    }
+}
+    /* Responsividade para smartphones */
+    @media (max-width: 480px) {
+        /* corpo: alinhar ao topo para melhor leitura em mobile */
+        body {
+            align-items: flex-start;
+        }
+
+        .container {
+            max-width: 360px;
+            margin: 6px auto 20px auto;
+            padding: 10px 12px 18px 12px;
+            box-sizing: border-box;
+        }
+
+        /* logo reduzida, sem empurrar os botões */
+        .profile-img {
+            width: 280px; /* menor que desktop para caber melhor */
+            height: auto;
+            margin: 0 0 6px 0;
+        }
+
+        .profile h1 {
+            font-size: 18px;
+            line-height: 1.2;
+            margin: 6px 0 8px;
+            padding: 0 6px;
+        }
+
+        .profile {
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        /* botões ocupam 100% da largura do container, com spacing adequado */
+        .links {
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .link-item {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 16px;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+
+        /* social menor e ajustado */
+        .social {
+            gap: 12px;
+        }
+
+        .social-icon {
+            font-size: 13px;
+        }
+
+        /* esconder decorativos que atrapalham visual em telas pequenas */
+        .wave1, .wave2, .container::after {
+            display: none;
+        }
+    }
+
+    /* Tablet: 481px - 1023px */
+    @media (min-width: 481px) and (max-width: 1023px) {
+        body {
+            align-items: center;
+        }
+
+        .container {
+            max-width: 640px;
+            padding: 12px 18px 24px 18px;
+        }
+
+        .profile-img {
+            width: 380px;
+        }
+
+        .profile h1 {
+            font-size: 22px;
+        }
+
+        /* botões com largura mais controlada no tablet (80% do container) */
+        .links {
+            gap: 14px;
+        }
+
+        .link-item {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 20px;
+            padding: 14px 18px;
+            border-radius: 10px;
+        }
+
+        /* waves um pouco maiores em tablet */
+        .wave1 { width: 220px; left: -10px; top: 0; }
+        .wave2 { width: 300px; right: -20px; bottom: -30px; }
+    }
+
+    /* Desktop: >= 1024px */
+    @media (min-width: 1024px) {
+        body {
+            align-items: center;
+        }
+
+        .container {
+            max-width: 720px;
+            padding: 20px 24px 28px 24px;
+        }
+
+        .profile-img {
+            width: 500px;
+        }
+
+        .profile h1 {
+            font-size: 28px;
+        }
+
+        /* botões com largura fixa e centralizados no desktop */
+        .links {
+            gap: 18px;
+        }
+
+        .link-item {
+            display: block;
+            width: 360px;
+            margin: 0 auto;
+            font-size: 24px;
+            padding: 16px 22px;
+            border-radius: 12px;
+        }
+
+        /* waves maiores no desktop */
+        .wave1 { width: 320px; left: -20px; top: -6px; }
+        .wave2 { width: 420px; right: -40px; bottom: -50px; }
+
+        /* brush atrás, ajustado */
+        .container::after { left: -20px; bottom: -100px; width: 420px; height: 420px; }
+    }
+
+    /* Crédito discreto no rodapé */
+    .credit {
+        position: fixed;
+        right: 12px;
+        bottom: 8px;
+        font-size: 12px;
+        color: rgba(0,0,0,0.55);
+        text-decoration: none;
+        background: transparent;
+        padding: 6px 8px;
+        border-radius: 6px;
+        z-index: 9999;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .credit:hover {
+        color: rgba(0,0,0,0.85);
+    }
+
+.credit-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
