@@ -80,11 +80,9 @@ body {
 }
 
 .profile-img {
-    /* reduzir 20% em relação ao tamanho base anterior (500px -> 400px) */
-    width: 400px;
+    width: 280px; /* tamanho base reduzido para melhor visualização em mobile */
     height: auto;
-    margin: 0 0 6px 0; /* sem espaçamento superior */
-    /* removido transform para que o tamanho seja real e previsível no fluxo */
+    margin: 0 0 6px 0;
     display: block;
     z-index: 1;
 }
@@ -149,30 +147,52 @@ body {
 
 /* Responsividade */
 @media (max-width: 480px) {
+    body {
+        padding: 0 10px;
+        align-items: flex-start;
+    }
+
     .container {
-        padding: 0 10px 10px 10px;
+        padding: 10px;
+        margin-top: 20px;
     }
 
     .profile-img {
-        /* versão responsiva: 80% do desktop (400px -> 320px) */
-        width: 320px;
+        width: 200px; /* Reduzido para melhor visualização em mobile */
     }
 
-    /* waves menores em mobile para não interferir no conteúdo */
+    .profile h1 {
+        font-size: 24px; /* Texto menor para mobile */
+        padding: 0 10px;
+        margin-top: 10px;
+    }
+
+    .bio {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    /* waves menores em mobile */
     .wave1 {
-        width: 120px;
+        width: 100px;
         top: 0;
         left: 0;
     }
 
     .wave2 {
-        width: 120px;
+        width: 100px;
         bottom: -10px;
         right: -6px;
     }
 
+    .links {
+        gap: 10px;
+    }
+
     .link-item {
+        width: 100%; /* Ocupar toda largura disponível */
         padding: 12px 15px;
+        font-size: 18px; /* Texto um pouco menor nos botões */
     }
 }
     /* Responsividade para smartphones */
