@@ -1,113 +1,71 @@
-# Bia Fernandes — Link na Bio
+# 🌸 Biolink para Maquiadora | Página Estilo Linktree
 
-<!-- Badges -->
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![GitHub repo](https://img.shields.io/badge/github-anab--alves%2Fbiolink--biamakeup-181717?style=flat&logo=github)](https://github.com/anab-alves/biolink-biamakeup)
-[![GitHub Pages](https://img.shields.io/badge/pages-anab--alves.github.io-brightgreen)](https://anab-alves.github.io/biolink-biamakeup)
+Este projeto é uma página de **biolink personalizada**, criada para maquiadoras que desejam centralizar seus links de forma elegante e profissional — ideal para colocar na **bio do Instagram**, WhatsApp ou cartão digital.
 
-Uma página simples e elegante estilo "link in bio" para divulgar contatos, cursos e portfólio. Construída em HTML/CSS leve, responsiva e fácil de personalizar.
+A página é **leve, responsiva e fácil de editar**, utilizando apenas **HTML + CSS**.
 
-![preview](Src/assets/background.png)
+---
 
-## Funcionalidades
-- Layout responsivo (celular / tablet / desktop)
-- Fundo dourado e elementos decorativos (waves, brush)
-- Botões grandes e legíveis (estilo _link in bio_)
-- Fontes personalizadas integradas (Parisienne, Petit Formal Script)
-- Crédito discreto com link para GitHub
-- Arquivo único, fácil deploy (servir os arquivos estáticos)
+## 🚀 Acesse o Projeto
 
-## Demo (usar localmente)
-- Abra `index.html` diretamente no navegador:
-  - No Windows PowerShell:
-    ```powershell
-    Start-Process .\index.html
-    ```
-- Ou rode um servidor HTTP simples (recomendado para testes locais):
-  ```powershell
-  python -m http.server 8000
-  # depois abra http://localhost:8000 no navegador
-  ```
+- **Repositório no GitHub:** https://github.com/anab-alves/biolink-maquiadora
 
-## Estrutura do projeto
-```
-biolink-biamakeup/
-├─ index.html
-├─ Src/
-│  ├─ styles/
-│  │  └─ style.css
-│  └─ assets/
-│     ├─ background.png
-│     ├─ brush.png
-│     ├─ waves1.png
-│     └─ waves2.png
-├─ Public/
-│  └─ images/
-│     └─ logo.png
-└─ README.md
-```
+---
 
-> Observação: os caminhos são relativos — mantenha a estrutura de pastas para que as imagens e o CSS carreguem corretamente.
+## 🛠 Tecnologias Utilizadas
 
-## Como personalizar (rápido)
-- Trocar a logo:
-  - Substitua `Public/images/logo.png` pela sua imagem (mesmo nome ou ajuste `index.html`).
-- Mudar links dos botões:
-  - Abra `index.html` e edite os `href` das tags `<a class="link-item">`.
-  - Exemplo WhatsApp:
-    ```html
-    <a href="https://wa.me/5511998765432" class="link-item" target="_blank">Whatsapp</a>
-    ```
-  - Use `target="_blank"` para abrir em nova aba.
-- Alterar texto do título / bio:
-  - Edite o `<h1>` e `<p class="bio">` em `index.html`.
-- Alterar fundo / brush / waves:
-  - Substitua as imagens em `Src/assets/` mantendo os mesmos nomes, ou atualize os URLs no CSS (`Src/styles/style.css`).
-- Créditos GitHub:
-  - No `index.html` há um link discreto no rodapé:
-    ```html
-    <a class="credit" href="https://github.com/anab-alves" target="_blank">desenvolvido por: anab-alves</a>
-    ```
-  - Edite o `href` e o texto conforme desejar.
+| Tecnologia | Uso |
+|-----------|-----|
+| **HTML5** | Estrutura do conteúdo |
+| **CSS3**  | Estilização, layout e tema visual |
 
-## Fonts
-As fontes foram adicionadas via Google Fonts no `<head>` de `index.html`. Se quiser trocar:
-- Substitua o link do Google Fonts no `<head>`.
-- Atualize as regras CSS que usam `font-family`.
+Não utiliza frameworks — fácil de modificar e rápido para carregar ✅
 
-Exemplo:
-```html
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Petit+Formal+Script&display=swap" rel="stylesheet">
-```
+---
 
-## Acessibilidade e boas práticas
-- Sempre inclua atributos `alt` descritivos nas imagens (logo, waves, brush) para leitores de tela.
-- Botões têm tamanho adequado para toque (mínimo recomendado ~44px de altura).
-- Contraste: se trocar cores, verifique contraste suficiente entre texto e fundo.
+## 📂 Estrutura de Pastas
 
-## Responsividade
-- Mobile: botões full-width, decorativos escondidos para evitar sobreposição.
-- Tablet: botões centralizados com largura ~80% do container.
-- Desktop: logo maior, waves visíveis e decoração completa.
+biolink-maquiadora/
+│
+├─ index.html # Página principal
+├─ /assets # Imagens e ícones utilizados no layout
+└─ /css
+└─ style.css # Estilos da página
 
-## Deploy
-Você pode publicar a página facilmente:
-- GitHub Pages: basta commitar no branch `main` (ou `gh-pages`) e ativar GitHub Pages nas configurações.
-- Netlify / Vercel: arraste a pasta para deploy ou conecte o repositório.
 
-## Sugestões de melhoria futuras
-- Adicionar animações suaves (fade/scale) na entrada.
-- Comprimir imagens (WebP / otimização) para carregar mais rápido.
-- Adicionar microdados (schema.org) para melhorar SEO.
-- Gerar versão AMP ou PWA para maior compatibilidade.
+---
 
-## Créditos
-- Design & conteúdo: Bia Fernandes
-- Desenvolvido por: [anab-alves](https://github.com/anab-alves)
+## 🎨 Personalização
 
-## Licença
-Sugestão:
-```
-MIT License
-```
-#
+Você pode editar:
+
+| Elemento | Onde editar | Dica |
+|---------|------------|------|
+| Nome da maquiadora | `index.html` | Procure o `<h1>` |
+| Foto de perfil | `assets/profile.png` | Substitua pelo seu PNG |
+| Cores principais | `css/style.css` | Busque por variáveis ou cores em HEX |
+| Links dos botões | `index.html` | Procure os `<a href="...">` |
+
+---
+
+## 🚀 Como Hospedar na Vercel
+
+1. Faça login em: https://vercel.com
+2. Clique em **New Project**
+3. Selecione o repositório `biolink-maquiadora`
+4. Deploy ✅
+
+> Não precisa configurar build — é projeto estático.
+
+---
+
+## 📝 Licença
+
+Este projeto é de uso livre para fins pessoais.
+
+Se usar e postar, deixe uma ⭐ no repositório 💖
+
+---
+
+Feito com carinho ✨  
+Desenvolvido por **Ana Beatriz**
