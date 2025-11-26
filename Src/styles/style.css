@@ -45,29 +45,28 @@ body {
     overflow: visible;
 }
 
-/* Waves decorativas posicionadas dentro do container */
+/* Waves decorativas posicionadas nas extremidades da viewport */
 .wave {
-    position: absolute;
+    position: fixed; /* fixas ao viewport, ficam nas extremidades da página */
     pointer-events: none;
     user-select: none;
-    z-index: 0;
+    z-index: -1; /* atrás do conteúdo */
     opacity: 1;
+    height: auto;
 }
 
 .wave1 {
-    top: -10px;
+    top: -20px;
     left: -20px;
-    /* aumentado para ficar mais visível próximo à logo */
-    width: 300px;
-    height: auto;
+    /* tamanho maior no desktop para preencher canto superior esquerdo */
+    width: 320px;
 }
 
 .wave2 {
-    bottom: -40px;
+    bottom: -30px;
     right: -30px;
-    /* aumentado para ficar mais presente perto dos botões */
-    width: 340px;
-    height: auto;
+    /* tamanho maior no desktop para preencher canto inferior direito */
+    width: 420px;
 }
 
 /* Perfil */
@@ -240,8 +239,8 @@ body {
             font-size: 13px;
         }
 
-        /* esconder decorativos que atrapalham visual em telas pequenas */
-        .wave1, .wave2, .container::after {
+        /* manter waves visíveis em mobile (ajustadas abaixo); esconder apenas o brush (container::after) */
+        .container::after {
             display: none;
         }
     }
